@@ -39,12 +39,12 @@ export function getPopularMovies () {
               // Adding the releaseYear attribute after doing a preliminary regex test for release date of format YYYY-MM-DDTHH:MM:SSZ
               if(typeof movie.releaseDate == "string" && reHasRsDate.test(movie.releaseDate)) {
                 // Split the releaseDate by the date separator
-                currentMovie.releaseYear = movie.releaseDate.split(rsDateSeparator).shift()
+                currentMovie.releaseYear = movie.releaseDate.split(rsDateSeparator).shift() || "Not Available"
               }
-              currentMovie.artworkUrl100 = movie.artworkUrl100
-              currentMovie.trackName = movie.trackName
-              currentMovie.trackHdPrice = movie.trackHdPrice
-              currentMovie.longDescription = movie.longDescription
+              currentMovie.artworkUrl100 = movie.artworkUrl100 || "Not Available"
+              currentMovie.trackName = movie.trackName || "Not Available"
+              currentMovie.trackHdPrice = movie.trackHdPrice ? ("$"+movie.trackHdPrice) : "Not Available"
+              currentMovie.longDescription = movie.longDescription || "Not Available"
 
               combinedResults.push(currentMovie)
             })

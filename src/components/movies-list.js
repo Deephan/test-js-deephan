@@ -25,7 +25,7 @@ export function MoviesList(props) {
                 <td><img src={movie.artworkUrl100} /></td>
                 <td>{movie.releaseYear}</td>
                 <td>{movie.trackName}</td>
-                <td>{`$${movie.trackHdPrice}`}</td>
+                <td>{movie.trackHdPrice}</td>
                 <td>{movie.longDescription}</td>
               </tr>
             )
