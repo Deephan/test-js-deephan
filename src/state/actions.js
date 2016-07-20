@@ -52,7 +52,7 @@ export function getPopularMovies () {
         }
 
         // Primary sorting of the results by year
-        combinedResults.sort(function(a, b) {
+        combinedResults.sort((a, b) => {
           if (parseInt(a.releaseYear) > parseInt(b.releaseYear)) {
             return 1
           }
